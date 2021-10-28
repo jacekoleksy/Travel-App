@@ -1,0 +1,52 @@
+:root {
+    /*--main-color: black;
+    var(--main-color)*/
+}
+
+body {
+    color: gray;
+    display: flex;
+    flex-direction: row;
+}
+
+body, h1 {
+    margin: 0;
+}
+
+.logo {
+    background-color: cornsilk;
+}
+
+.login-form {
+    background-color: red;
+}
+
+.logo, .login-form {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+@media screen and (max-device-width: 640px),
+screen and (max-width: 640px){
+    body {
+        flex-direction: column;
+    }
+
+    .logo {
+        height: 20vh;
+    }
+
+    .login-form {
+        height: 80vh;
+    }
+}
