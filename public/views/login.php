@@ -12,7 +12,7 @@
 
 <body>
     <video autoplay muted loop id="movie">
-        <source src="public\img\uploads\background1.mov" type="video/mp4">
+        <source src="public\img\uploads\background1.mov" type="video/mp4" preload metadata>
     </video>
     <div class="container">
         <div class="logo">
@@ -30,8 +30,8 @@
                         }
                     ?>
                 </div>
-                <input name="login-email" type="text" placeholder="E-mail">
-                <input name="login-password" type="password" placeholder="Password">
+                <input name="login-email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z0-9]{2,10}$" title="Email should only contain lower case letters, @ and . sign. Example: 'admin@gmail.com'" placeholder="E-mail" readonly onfocus="this.removeAttribute('readonly');">
+                <input name="login-password" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$" title="Password must contain lower and upper case letters, at least one sign and number" placeholder="Password" readonly onfocus="this.removeAttribute('readonly');">
                 <button type="submit" value="login">Log in</button>
             </form>
             <hr>
@@ -47,14 +47,14 @@
                     ?>
                 </div>
                 <div class="input-short">
-                    <input name="register-name" type="text" placeholder="Name">
-                    <input name="register-surname" type="text" placeholder="Surname">
+                    <input name="register-name" type="text" placeholder="Name" readonly onfocus="this.removeAttribute('readonly');">
+                    <input name="register-surname" type="text" placeholder="Surname" readonly onfocus="this.removeAttribute('readonly');">
                 </div>
-                <input name="register-email" type="text" placeholder="E-mail">
-                <input name="register-password" type="password" placeholder="Password">
-                <input name="register-confirm-password" type="password" placeholder="Confirm Password">
+                <input name="register-email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z0-9]{2,10}$" title="Email should only contain lower case letters, @ and . sign. Example: 'admin@gmail.com'" placeholder="E-mail" readonly onfocus="this.removeAttribute('readonly');">
+                <input name="register-password" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="Password must contain lower and upper case letters, at least one sign and number" placeholder="Password" readonly onfocus="this.removeAttribute('readonly');">
+                <input name="register-confirm-password" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="Password must contain lower and upper case letters, at least one sign and number" placeholder="Confirm Password" readonly onfocus="this.removeAttribute('readonly');">
                 <div class="terms">
-                    <input type="checkbox">
+                    <input type="checkbox" name="terms-of-use">
                     <h2>I accept <a href="">Terms of Use</a></h1>
                 </div>
                 <button type="submit" name="register">Sign in</button>
@@ -63,11 +63,8 @@
         <button id="get-started" type="submit" onclick="getStarted()">Get Started</button> 
     </div>
 <?php
-if ($_SERVER['REQUEST_URI'] !== "/"){
-echo '<script type="text/javascript">
-$("#get-started").hide();
-$(".logo").hide();
-$(".login-container").show().css("display", "flex");</script>';
+if ($_SERVER['REQUEST_URI'] !== "/") {
+echo '<script type="text/javascript">logging();</script>'; 
 }
 ?>
 </body>

@@ -57,7 +57,7 @@ form h1 {
     text-decoration: underline;
 }
 input {
-    font-family: 'Red Hat Text', sans-serif;
+    font-family: 'Red Hat Text', sans-serif !important;
     background-color: #e3e3e3;
     border: none;
     padding: 1em 2em;
@@ -66,6 +66,13 @@ input {
     width: 22vw;
     height: 1vh;
     font-size: 1.2em;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #e3e3e3 inset;
+    font-family: 'Red Hat Text', sans-serif !important;
+}
+input:-webkit-autofill::first-line {
+    font-family: 'Red Hat Text', sans-serif !important;
 }
 .input-short input {
     text-align: center;
@@ -108,11 +115,16 @@ button {
     font-size: 1.7vw;
     width: 20vw;
     height: 8vh;
-    background: transparent linear-gradient(-60deg, #EF3769 0%, #FCC965 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 45%, #EF3769 55%, #FCC965 100%) 0% 0% no-repeat padding-box;
     color: white;
     border: none;
     border-radius: 10vh;
     box-shadow: 0px 6px 9px #00000029;
+    background-size: 200% auto;
+    transition: 0.5s;
+}
+button:hover {
+    background-position: right center;
 }
 
 @media only screen and (max-device-width: 1050px) {
@@ -220,5 +232,91 @@ button {
     button {
         font-size: 5vw;
         height: 7vh;
+    }
+}
+
+/* Settings page*/
+.settings-container {
+    position: absolute;
+    width: 50%;
+    display: flex;
+    flex: 0 1 auto;
+    left: 50%;
+    margin-top: 13vh;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60%;
+    min-height: 80%;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 5vh;
+    background-color: rgba(196, 196, 196, .4);
+}
+ ul {
+    flex-direction: row;
+    list-style-type: none;
+    width: 40vw;
+ }
+ li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+ }
+ li > h3 {
+    margin: 0 auto;
+    text-align: left;
+    width: 20vw;
+    padding: 0;
+    display: inline;
+    margin-right: auto;
+ }
+ ul > h2 {
+    text-align: left;
+    font-size: 4vh;
+    padding: 0vh 2em;
+ }
+ li > input {
+    margin-left: auto;
+    margin: 0.5em;
+ }
+
+@media only screen and (max-device-width: 1050px) {
+    .settings-container {
+        min-width: 90%;
+    }
+    ul { 
+        width: 80vw;
+    }
+    li > h3 {
+        padding: 0vh 5vw;
+        width: 30vw;
+        font-size: 1.9vh;
+    }
+    li > input {
+        font-size: 1.5vh;
+        width: 35vw;
+    }
+    ul > h2 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-device-width: 420px) { 
+    ul {
+        width: 80vw;
+    }
+    li > h3 {
+        width: 30vw;
+        padding: 0;
+        font-size: 1.7vh;
+    }
+    li > input {
+        width: 35vw;
     }
 }

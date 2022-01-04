@@ -32,12 +32,11 @@ class UserRepository extends Repository
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users (id_users, email, password)
-            VALUES (?, ?, ?)
+            INSERT INTO users (email, password)
+            VALUES (?, ?)
         ');
 
         $stmt->execute([
-            2,
             $user->getEmail(),
             $user->getPassword(),
         ]);
@@ -80,5 +79,38 @@ class UserRepository extends Repository
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['id_users'];
+    }
+
+    public function getPassword(User $user): string
+    {
+        return $user->getPassword();
+    }
+
+    public function editUser(User $user, $email, $password, $name, $surname) {
+        $id = $this->getUserId($user);
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE users
+            SET email = ?, password = ?
+            WHERE id_users = ?;
+        ');
+
+        $stmt->execute([
+            $email,
+            $password,
+            $id,
+        ]);
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE users_details
+            SET name = ?, surname = ?
+            WHERE id_users_details = ?;
+        ');
+
+        $stmt->execute([
+            $name,
+            $surname,
+            $id,
+        ]);
     }
 }
