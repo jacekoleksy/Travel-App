@@ -32,4 +32,30 @@ class AppController {
         }
         print $output;
     }
+
+    protected function cookieExists() {
+        if (isset($_COOKIE['user'])) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/compass");
+        }
+    }
+
+    protected function cookieNotExists() {
+        if (!isset($_COOKIE['user'])) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
+    }
+
+    protected function deleteCookies() {
+        if (isset($_SERVER['HTTP_COOKIE'])) {
+            $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+            foreach($cookies as $cookie) {
+                $parts = explode('=', $cookie);
+                $name = trim($parts[0]);
+                setcookie($name, '', time()-1000);
+                setcookie($name, '', time()-1000, '/');
+            }
+        }
+    }
 }

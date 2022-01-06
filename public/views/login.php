@@ -55,7 +55,7 @@
                 <input name="register-confirm-password" type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="Password must contain lower and upper case letters, at least one sign and number" placeholder="Confirm Password" readonly onfocus="this.removeAttribute('readonly');">
                 <div class="terms">
                     <input type="checkbox" name="terms-of-use">
-                    <h2>I accept <a href="">Terms of Use</a></h1>
+                    <h2>I accept <a href="">Terms of Use</a></h2>
                 </div>
                 <button type="submit" name="register">Sign in</button>
             </form>

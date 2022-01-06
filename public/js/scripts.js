@@ -21,27 +21,39 @@ function getCookie(cName) {
     cArr.forEach(val => {
       if (val.indexOf(name) === 0) res = val.substring(name.length);
     })
-    return res
+    return res;
+}
+function checkACookieExists(cName) {
+    const name = cName + "=";
+    if (document.cookie.split(';').some((item) => item.trim().startsWith(cName))) {
+        return true;
+    }
+    else return false;
 }
 function settings() {
     document.getElementById("settings-name").value = getCookie("name");
     document.getElementById("settings-surname").value = getCookie("surname");
     document.getElementById("settings-email").value = getCookie("user");
 }
-function menuShow() {
-    if ($("#menu > li").display = "none") {
-        $("#menu > li").stop().slideToggle().css("display","block");
-    } else {
-        $("#menu > li").stop().slideToggle();
-    }
-}
-function accountShow() {
-    if ($("#account > li").display = "none") {
-        $("#account > li").stop().slideToggle().css("display","block");
-    } else {
-        $("#account > li").stop().slideToggle();
-    }
-}
+// function menuShow() {
+//     if ($("#menu > li").display = "none") {
+//         $("#menu > li").stop().slideToggle().css("display","block");
+//     } else {
+//         $("#menu > li").stop().slideToggle();
+//     }
+// }
+// function accountShow() {
+//     if ($("#account > li").display = "none") {
+//         $("#account > li").stop().slideToggle().css("display","block");
+//     } else {
+//         $("#account > li").stop().slideToggle();
+//     }
+// }
 function menuMobileShow() {
-    $("#menu-mobile").slideToggle(500);
+    $("#menu-mobile").stop().slideToggle(500);
+}
+function menuMobileHide() {
+    if ($("#menu-mobile").display = "block") {
+        $("#menu-mobile").slideUp(500);
+    }
 }

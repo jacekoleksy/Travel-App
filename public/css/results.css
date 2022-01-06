@@ -1,0 +1,86 @@
+.results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.your-destination, .your-preferences, .no-results {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 5vh;
+    background-color: rgba(196, 196, 196, 0.4);
+    margin: 1vh 1vw;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 300;
+    backdrop-filter: blur(1px);
+}
+.your-destination, .your-preferences {
+    min-height: 85vh;
+}
+.your-destination > h1, .your-preferences > h1, .no-results > h1 {
+    margin: 1vw;
+    font-weight: 100;
+}
+.no-results > h2 {
+    font-size: 3vh;
+}
+.your-destination > h2, .your-preferences > h2 {
+    font-size: 5vh;
+    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.no-results > h2 > a {
+    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.your-destination > p {
+    padding: 5vh;
+    font-size: 2vh;
+    color: black;
+}
+#desc_title {
+    font-weight: bold;
+    font-size: 3vh;
+    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 50%, #EF3769 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#desc_color {
+    color: #002527;
+    font-weight: bold;
+}
+#compass-image {
+    background-image: url("../img/uploads/compass.png");
+    background-size: 100%;
+    width: 35vw;
+    height: 35vw;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+#pointer {
+    position: relative;
+    width: 1vw;
+    height: 1vw;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 50%;
+    background-color: #f25469;
+    left: 48.9%;    /*48.9 center, 3.19, one move*/
+    top: 48.9%;     /*48.9 center, 3.23 one move*/
+}
+.fa-chevron-circle-left, .fa-chevron-circle-right {
+    font-size: 6vh !important;
+    background: transparent linear-gradient(120deg, #f47767 0%, #f25469 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

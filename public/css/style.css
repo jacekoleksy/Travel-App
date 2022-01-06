@@ -1,9 +1,12 @@
+/* Login page */
 body {
     margin: 0;
 }
 #movie {
     position: fixed;
-    width: 115%;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
   }
 .container {
     position: fixed;
@@ -30,6 +33,7 @@ body {
 .login-container {
     position: relative;
     width: 50%;
+    height: 20vh;
     display: none;
     flex-direction: row;
     min-width: 80%;
@@ -45,7 +49,7 @@ form.login {
     align-items: center;
     width: 50vw;
 }
-form h1 {
+h1 {
     font-size: 6vh;
     margin-bottom: 1vh;
 }
@@ -53,19 +57,20 @@ form h1 {
     height: 1vh;
     width: 35vw;
     text-align: center;
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
     text-decoration: underline;
+    font-size: 2vh;
 }
 input {
     font-family: 'Red Hat Text', sans-serif !important;
     background-color: #e3e3e3;
     border: none;
-    padding: 1em 2em;
-    margin: 1em;
+    padding: 2vh 2vw;
+    margin: 1.8vh;
     border-radius: 10vh;
     width: 22vw;
     height: 1vh;
-    font-size: 1.2em;
+    font-size: 2vh;
 }
 input:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px #e3e3e3 inset;
@@ -77,27 +82,30 @@ input:-webkit-autofill::first-line {
 .input-short input {
     text-align: center;
     width: 9.7vw;
-    padding: 1em 1em;
-    margin: 1em;
+    padding: 2vh 1vw;
+    margin: 1.8vh;
 }
 input[type=checkbox] {
-    width: 1.3em;
-    height: 1.3em;
+    width: 2.5vw;
+    height: 2.5vh;
 }
 .terms {
     display: flex;
     flex-direction: row;
     color: white;
-    margin-bottom: -2em;
+    margin-bottom: -2vh;
 }
 .terms input {
-    margin-top: 1.2em;
+    margin-top: 2vh;
 }
 .terms a {
     color: #002527;
 }
+.terms > h2 {
+    font-size: 2.2vh;
+}
 .login button {
-    margin: 1em;
+    margin: 2vh;
 }
 ::placeholder {
     font-family: 'Red Hat Text', sans-serif;
@@ -107,7 +115,7 @@ input[type=checkbox] {
 }
 hr {
     border: none;
-    border-left: 4px solid #002527;
+    border-left: 0.5vh solid #002527;
     margin: 3vw 0vw;
 }
 button {
@@ -120,19 +128,14 @@ button {
     border: none;
     border-radius: 10vh;
     box-shadow: 0px 6px 9px #00000029;
-    background-size: 200% auto;
-    transition: 0.5s;
+    background-size: 200% auto !important;
+    transition: background-position 0.5s !important;
 }
 button:hover {
-    background-position: right center;
+    background-position: right center !important;
 }
 
 @media only screen and (max-device-width: 1050px) {
-    #movie {
-        width: 250% !important;
-        height: auto !important;
-        margin-left: -80vw;
-    }
     .logo {
         margin-top: 40vw;
     }
@@ -146,8 +149,9 @@ button:hover {
         flex-direction: column;
     }
     .input-short input {
-        margin: 0.5em;
-        width: 11vw;
+        margin: 1vh;
+        width: 12.5vw;
+        padding: 1.2vh 1vw;
     }
     button {
         height: 6vh;
@@ -155,23 +159,28 @@ button:hover {
         font-size: 2vh;
     }
     h2 {
-        margin-bottom: 1.5em;
+        margin-bottom: 1.5vh;
     }
     input {
         text-align: center;
         font-size: 1.2vh;
-        width: 25vw;
+        width: 30vw;
         height: 1.5vh;
+        padding: 1.2vh 1vw;
+        margin: 1vh;
+    }
+    hr {
+        border-left: 0.4vh solid #002527;
     }
 }
 
 @media only screen and (max-device-width: 420px) {
-    #movie {
+    /* #movie {
         width: 600% !important;
         height: auto !important;
         margin-left: -350vw !important;
         margin-top: -10vh;
-    }
+    } */
     form h1 {
         margin: 0;
     }
@@ -209,20 +218,20 @@ button:hover {
         margin-bottom: 0.5em;
     }
     input[type=checkbox] {
-        width: 2em;
-        height: 2em;
-        margin: 1.4em 1em 0 0;
+        width: 4vw;
+        height: 4vh;
+        margin: 1vh 1.2vw 0 0;
     }
     hr {
         border: none;
-        border-top: 4px solid #002527;
+        border-top: 0.7vw solid #002527;
         width: 40%;
         margin: 0 30vw;
     }
     input {
         height: 2vh;
         width: 50vw;
-        font-size: 1.3em; 
+        font-size: 2vh; 
         margin: 1vh 1vw;
     }
     .input-short input {
@@ -234,52 +243,55 @@ button:hover {
         height: 7vh;
     }
 }
+/* End of Login page */
 
-/* Settings page*/
+/* Settings page */
 .settings-container {
-    position: absolute;
     width: 50%;
     display: flex;
-    flex: 0 1 auto;
-    left: 50%;
-    margin-top: 13vh;
-    transform: translateX(-50%);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 60%;
-    min-height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    min-width: 60vw;
+    min-height: 80vh;
     box-shadow: 0px 6px 6px #00000029;
     border-radius: 5vh;
     background-color: rgba(196, 196, 196, .4);
 }
- ul {
+.settings-container > form > ul {
+    margin: 0;
+}
+ul {
     flex-direction: row;
     list-style-type: none;
     width: 40vw;
+    padding: 0;
  }
  li {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
  }
  li > h3 {
     margin: 0 auto;
     text-align: left;
-    width: 20vw;
+    width: 10vw;
     padding: 0;
     display: inline;
     margin-right: auto;
+    font-size: 2vh;
  }
  ul > h2 {
     text-align: left;
     font-size: 4vh;
-    padding: 0vh 2em;
+    padding: 0vh 5vw;
  }
  li > input {
     margin-left: auto;
-    margin: 0.5em;
+    margin: 1.5vh;
+    width: 20vw;
  }
 
 @media only screen and (max-device-width: 1050px) {
@@ -297,10 +309,11 @@ button:hover {
     li > input {
         font-size: 1.5vh;
         width: 35vw;
+        margin: 1.3vh;
     }
     ul > h2 {
         text-align: center;
-        margin-bottom: 1em;
+        margin-bottom: 1vh;
     }
     h1 {
         text-align: center;
@@ -317,6 +330,52 @@ button:hover {
         font-size: 1.7vh;
     }
     li > input {
-        width: 35vw;
+        width: 45vw;
     }
 }
+/* End of Settings page */
+
+/* About Us page */
+.settings-container > .logo {
+    margin-top: 0;
+}
+.settings-container > .logo > img{
+    width: 30vw;
+}
+.settings-container > h2 {
+    font-size: 3vh;
+}
+.settings-container > p, .settings-container > h2, .settings-container > h3, .settings-container > h4 {
+    padding: 0vh 5vw;
+    text-align: center;
+}
+.settings-container > h2 > a {
+    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 45%, #EF3769 55%, #FCC965 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3vh;
+}
+.settings-container > h3 {
+    font-size: 2vh;
+}
+.settings-container > h4 {
+    font-size: 1.5vh;
+}
+h4 > a {
+    font-size: 1.5vh;
+    background: transparent linear-gradient(120deg, #FCC965 0%,#EF3769 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-device-width: 1050px) { 
+    .settings-container > .logo > img{
+        width: 70vw;
+    }
+    .settings-container > h2 {
+        font-size: 2vh;
+    }
+    .settings-container > h2 > a {
+        font-size: 2vh;
+    }
+}
+/* End of About Us page */

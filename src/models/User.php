@@ -33,14 +33,14 @@ class User {
         return $this->name;
     }
 
-    public function setName(string $name): void
-    {
-        $this->name = $name;
-    }
-
     public function getSurname(): string
     {
         return $this->surname;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
 
     public function setSurname(string $surname): void

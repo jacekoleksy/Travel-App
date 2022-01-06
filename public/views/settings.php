@@ -17,27 +17,29 @@
         <source src="public\img\uploads\background1.mov" type="video/mp4" preload metadata>
     </video>
     <div class="container">
-        <div class="nav" id="nav-pc" onmouseover="menuShow();accountShow()" onmouseout="menuShow();accountShow()">
+        <div class="nav" id="nav-pc">
             <i class="fas fa-bars fa-3x"></i>
             <ul id="menu">
                 <li><a href="/compass">Compass</a></li>
-                <li><a href="">About Us</a></li>
+                <li><a href="/about_us">About Us</a></li>
             </ul>
             <ul id="account">
-                <li><a href="" id="another-color">My Results</a></li>
+                <li><a href="/results" id="another-color">My Results</a></li>
                 <li><a href="/settings" id="another-color">Settings</a></li>
+                <li><a href="/logout" id="another-color">Log out</a></li>
             </ul>
             <i class="fas fa-user-circle fa-3x" id="another-color"></i>
         </div>
-        <div class="nav" id="nav-mobile" onmouseover="menuMobileShow()" onmouseout="menuMobileShow()">
-        <i class="fas fa-bars fa-3x"></i>
-        <i class="fas fa-user-circle fa-3x" id="another-color"></i>
+        <div class="nav" id="nav-mobile" onclick="menuMobileShow()" onmouseout="menuMobileHide()">
+            <i class="fas fa-bars fa-3x"></i>
+            <i class="fas fa-user-circle fa-3x" id="another-color"></i>
         </div>
         <ul id="menu-mobile">
                 <li><a href="/compass">Compass</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="" id="another-color">My Results</a></li>
+                <li><a href="/about_us">About Us</a></li>
+                <li><a href="/results" id="another-color">My Results</a></li>
                 <li><a href="/settings" id="another-color">Settings</a></li>
+                <li><a href="/logout" id="another-color">Log out</a></li>
         </ul>
         <div class="settings-container">
             <form class="login" action="/settings_action" method="POST">

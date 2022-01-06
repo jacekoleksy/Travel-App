@@ -2,9 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/compass.css">
     <link rel="stylesheet" type="text/css" href="public/css/nav.css">
-    <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
@@ -13,6 +11,7 @@
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>Travel Compass</title>
 </head>
+
 <body>
     <video autoplay muted loop id="movie">
         <source src="public\img\uploads\background1.mov" type="video/mp4" preload metadata>
@@ -31,7 +30,7 @@
             </ul>
             <i class="fas fa-user-circle fa-3x" id="another-color"></i>
         </div>
-        <div class="nav" id="nav-mobile" onmouseover="menuMobileShow()" onmouseout="menuMobileShow()">
+        <div class="nav" id="nav-mobile" onclick="menuMobileShow()" onmouseout="menuMobileHide()">
             <i class="fas fa-bars fa-3x"></i>
             <i class="fas fa-user-circle fa-3x" id="another-color"></i>
         </div>
@@ -43,28 +42,19 @@
                 <li><a href="/logout" id="another-color">Log out</a></li>
         </ul>
         <div class="settings-container">
-                <?php
-                    if(isset($currentquestion) && isset($questionnum) && isset($questiontitle)){
-                        echo "<h1>Question ",$currentquestion," of ",$questionnum,"</h1>";
-                        echo "<h2>",$questiontitle,"</h2>";
-                    }
-                    if(isset($result)) {
-                        echo "<h1>Your Result</h1>";
-                        echo "<h2>Value W:",$_COOKIE['value_w']," Value H:",$_COOKIE['value_h'],"</h2>";
-                    }
-                ?>
-            <hr>
-            <?php
-            if(isset($currentquestion) && isset($questionnum) && isset($questiontitle)){
-            echo '<form class="compass" action="/compass_action" method="POST">';
-            echo '    <button type="submit" value=-2 name="opinion">Strongly Disagree</button>';
-            echo '    <button type="submit" value=-1 name="opinion">Disagree</button>';
-            echo '    <button type="submit" value=0 name="opinion">No Opinion</button>';
-            echo '    <button type="submit" value=1 name="opinion">Agree</button>';
-            echo '    <button type="submit" value=2 name="opinion">Strongly Agree</button>';
-            echo '</form>';
-            }
-            ?>
+            <div class="logo">
+                <img src=public/img/uploads/logo.png>
+            </div>
+            <h2>
+            The idea for our Compass arose from the simple need to find the right holiday destination <a>without searching through thousands of pages or videos</a>
+            </h2>
+            <h3>
+            Thanks to our service, after answering a few short questions about your preferences, you will find a properly personalized answer to this question. The questions are based only on actual data regarding prices, leisure activities and the preferences of the average visitor.<br><br>
+            It is not always possible to rely on the opinion of people from the Internet, and it is better not to be angry with anyone that the holiday did not go well, right?
+            </h3>
+            <h4>
+            Jacek Oleksy, a student of Politechnika Krakowska im. Tadeusz Kościuszko &copy; 2022 <a href="mailto:jacekoleksy99@gmail.com">jacekoleksy99@gmail.com</a>
+            </h4>
         </div>
     </div>
 </body>

@@ -1,6 +1,44 @@
-.container {
-    background-image: url("../img/uploads/bck1.JPG");
-    /* background-image: url("../img/uploads/bck2.JPG");
-    background-image: url("../img/uploads/bck3.JPG");
-    background-image: url("../img/uploads/bck4.JPG"); */
+/* Compass page */
+hr {
+    border: none;
+    border-top: 0.2vw solid #002527;
+    width: 60%;
+    margin: 2vh 20vw;
+}
+h1 {
+    margin: 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button:nth-child(1) {
+    background: transparent linear-gradient(120deg, #c04a4a 0%, #f61011 100%) 0% 0% no-repeat padding-box;
+}
+button:nth-child(2) {
+    background: transparent linear-gradient(120deg, #ffa600 0%, #ff4f00 100%) 0% 0% no-repeat padding-box;
+}
+button:nth-child(3) {
+    background: transparent linear-gradient(120deg, #ffde00 0%, #ffb600 100%) 0% 0% no-repeat padding-box;
+}
+button:nth-child(4) {
+    background: transparent linear-gradient(120deg, #229e03 0%, #7ffa00 100%) 0% 0% no-repeat padding-box;
+}
+button:nth-child(5) {
+    background: transparent linear-gradient(120deg, #229e03 0%, #115700 100%) 0% 0% no-repeat padding-box;
+}
+button {
+    width: 30vw;
+    height: 7vh;
+    margin: 1vh 20vw;
+    background-size: 200% auto;
+    transition: background-position 0.5s;
+}
+button:hover {
+    background-position: right center;
+}
+
+@media only screen and (max-device-width: 1050px) {
+    
 }

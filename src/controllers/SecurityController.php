@@ -1,22 +1,32 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/User.php';
+require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../models/Result.php';
 require_once __DIR__.'/../repository/UserRepository.php';
-
+require_once __DIR__.'/../repository/Questions.php';
 
 class SecurityController extends AppController {
 
     private $userRepository;
+    private $questions;
 
     public function __construct()
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
+        $this->$questions = new Questions();
     }
 
     public function login()
     {   
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
+        setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
+        $this->cookieExists();
+
         if (!$this->isPost()) {
             return $this->render('login');
         }
@@ -52,6 +62,13 @@ class SecurityController extends AppController {
     
     public function register()
     {   
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
+        setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
+        $this->cookieExists();
+
         if (!$this->isPost()) {
             return $this->render('login');
         }
@@ -96,16 +113,98 @@ class SecurityController extends AppController {
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/compass");
     }
+
+    public function compass()
+    {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
+        $this->cookieNotExists();
+
+        if (!isset($_COOKIE['questionnumber'])) {
+            setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
+        }
+        else if ($_COOKIE['questionnumber'] == $this->$questions->getNumberOfQuestions() + 1) {
+            $this->userRepository->addResult($_COOKIE['user']);
+            setcookie("questionnumber", $_COOKIE['questionnumber'] + 1, time() + (12 * 86400 * 30), "/");
+            return $this->render('compass', ['result' => "Your result"]);
+        } 
+        else if ($_COOKIE['questionnumber'] > $this->$questions->getNumberOfQuestions() + 1) {
+            return $this->render('compass', ['result' => "Your result"]);
+        }
+        else if ($_COOKIE['questionnumber'] == 1) {
+            setcookie("value_w", 0, time() + (12 * 86400 * 30), "/");
+            setcookie("value_h", 0, time() + (12 * 86400 * 30), "/");
+        }
+
+        if (!$this->isPost()) {
+            return $this->render('compass', ['currentquestion' => $_COOKIE['questionnumber'], 'questionnum' => $this->$questions->getNumberOfQuestions(), 'questiontitle' => $this->$questions->getQuestionTitle($_COOKIE['questionnumber'])]);
+        }
+    }
+
+    public function compass_action()
+    {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
+        $this->cookieNotExists();
+
+        if (!$this->isPost()) {
+            return $this->render('compass');
+        }
+        else {
+            setcookie("value_w", $_COOKIE['value_w'] + $_POST['opinion']*$this->$questions->getWidthValue($_COOKIE['questionnumber']), time() + (12 * 86400 * 30), "/");
+            setcookie("value_h", $_COOKIE['value_h'] + $_POST['opinion']*$this->$questions->getHeightValue($_COOKIE['questionnumber']), time() + (12 * 86400 * 30), "/");
+            setcookie("questionnumber", $_COOKIE['questionnumber'] + 1, time() + (12 * 86400 * 30), "/");
+        }
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/compass");
+    }
+
+    public function results()
+    {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
+        setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
+        $this->cookieNotExists();
+
+        $result = $this->userRepository->showResults($_COOKIE["user"]);
+
+        if (!$result) {
+            return $this->render('results', ['error' => ['No results yet!', 'You need to complete the ', 'Compass form']]);
+        }
+
+        $this->render('results', ['value_h' => [$result->getValueH()], 'value_w' => [$result->getValueW()], 'name' => [$result->getName()], 'description' => [$result->getDesc()], ]);
+    }
+
     public function settings()
     {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+        
+        setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
+        $this->cookieNotExists();
+
         $this->render('settings');
     }
 
     public function settings_action()
     {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
         if (!$this->isPost()) {
             return $this->render('settings');
         }
+
+        $this->cookieNotExists();
 
         $email = $_POST['settings-email'];
         $password = $_POST['settings-password'];
@@ -151,6 +250,19 @@ class SecurityController extends AppController {
         setcookie("name", $name, time() + (12 * 86400 * 30), "/");
         setcookie("surname", $surname, time() + (12 * 86400 * 30), "/");
 
-        $this->render('settings');
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/settings");
+    }
+
+    public function logout() {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+        session_destroy();
+        
+        $this->deleteCookies();
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/");
     }
 }
