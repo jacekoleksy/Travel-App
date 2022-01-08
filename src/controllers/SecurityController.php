@@ -128,11 +128,13 @@ class SecurityController extends AppController {
         else if ($_COOKIE['questionnumber'] == $this->$questions->getNumberOfQuestions() + 1) {
             $this->userRepository->addResult($_COOKIE['user']);
             setcookie("questionnumber", $_COOKIE['questionnumber'] + 1, time() + (12 * 86400 * 30), "/");
-            return $this->render('compass', ['result' => "Your result"]);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/results");
         } 
-        else if ($_COOKIE['questionnumber'] > $this->$questions->getNumberOfQuestions() + 1) {
-            return $this->render('compass', ['result' => "Your result"]);
-        }
+        // else if ($_COOKIE['questionnumber'] > $this->$questions->getNumberOfQuestions() + 1) {
+        //     $this->userRepository->showLastResult($_COOKIE['user']);
+        //     return $this->render('compass', ['value_h' => [$result->getValueH()], 'value_w' => [$result->getValueW()], 'name' => [$result->getName()], 'description' => [$result->getDesc()]]);
+        // }
         else if ($_COOKIE['questionnumber'] == 1) {
             setcookie("value_w", 0, time() + (12 * 86400 * 30), "/");
             setcookie("value_h", 0, time() + (12 * 86400 * 30), "/");
@@ -173,13 +175,13 @@ class SecurityController extends AppController {
         setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
         $this->cookieNotExists();
 
-        $result = $this->userRepository->showResults($_COOKIE["user"]);
+        $results = $this->userRepository->showResult($_COOKIE["user"]);
 
-        if (!$result) {
+        if (!$results) {
             return $this->render('results', ['error' => ['No results yet!', 'You need to complete the ', 'Compass form']]);
         }
 
-        $this->render('results', ['value_h' => [$result->getValueH()], 'value_w' => [$result->getValueW()], 'name' => [$result->getName()], 'description' => [$result->getDesc()], ]);
+        $this->render('results', ['results' => $results]);
     }
 
     public function settings()

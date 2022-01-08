@@ -1,7 +1,7 @@
 function getStarted() {
     $("#get-started").delay(500).fadeOut(1000);
     $(".logo").delay(500).fadeOut(1000);
-    $(".login-container").delay(1500).css("display", "flex").hide().slideUp(300).fadeIn(1000);
+    $(".login-container").delay(1500).css("display", "flex").hide().fadeIn(1000);
 }
 function getHidden() {
     $("#get-started").hide();
@@ -35,20 +35,6 @@ function settings() {
     document.getElementById("settings-surname").value = getCookie("surname");
     document.getElementById("settings-email").value = getCookie("user");
 }
-// function menuShow() {
-//     if ($("#menu > li").display = "none") {
-//         $("#menu > li").stop().slideToggle().css("display","block");
-//     } else {
-//         $("#menu > li").stop().slideToggle();
-//     }
-// }
-// function accountShow() {
-//     if ($("#account > li").display = "none") {
-//         $("#account > li").stop().slideToggle().css("display","block");
-//     } else {
-//         $("#account > li").stop().slideToggle();
-//     }
-// }
 function menuMobileShow() {
     $("#menu-mobile").stop().slideToggle(500);
 }
@@ -56,4 +42,44 @@ function menuMobileHide() {
     if ($("#menu-mobile").display = "block") {
         $("#menu-mobile").slideUp(500);
     }
+}
+var num = 0;
+function nextResult() {
+    divsDestination = document.querySelectorAll('.your-destination');
+    divsPreferences = document.querySelectorAll('.your-preferences');
+
+    num++;
+
+    var prev = num - 1;
+    if (num == divsDestination.length) {
+        num = 0;
+    }
+    if (prev == -1) {
+        prev = divsDestination.length - 1;
+    }
+
+    $(divsDestination[prev]).fadeOut(500);
+    $(divsPreferences[prev]).fadeOut(500);
+    $(divsDestination[num]).css("display", "flex").hide().delay(500).fadeIn(500);
+    $(divsPreferences[num]).css("display", "flex").hide().delay(500).fadeIn(500);
+}
+function prevResult() {
+    divsDestination = document.querySelectorAll('.your-destination');
+    divsPreferences = document.querySelectorAll('.your-preferences');
+
+    var next = num - 1;
+    if (num == 0) {
+        next = divsDestination.length - 1;
+    }
+    else if (num == -1) {
+        num = divsDestination.length - 1;
+        next = num - 1;
+    }
+
+    $(divsDestination[num]).fadeOut(500);
+    $(divsPreferences[num]).fadeOut(500);
+    $(divsDestination[next]).css("display", "flex").hide().delay(500).fadeIn(500);
+    $(divsPreferences[next]).css("display", "flex").hide().delay(500).fadeIn(500);
+
+    num--;
 }

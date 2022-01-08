@@ -6,23 +6,31 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+#container-for-smaller {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .your-destination, .your-preferences, .no-results {
     width: 40vw;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
     box-shadow: 0px 6px 6px #00000029;
     border-radius: 5vh;
-    background-color: rgba(196, 196, 196, 0.4);
+    background-color: rgba(196, 196, 196, 0.2);
+    backdrop-filter: blur(7px);
     margin: 1vh 1vw;
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 300;
-    backdrop-filter: blur(1px);
 }
 .your-destination, .your-preferences {
     min-height: 85vh;
+    display: none;
 }
 .your-destination > h1, .your-preferences > h1, .no-results > h1 {
     margin: 1vw;
@@ -36,6 +44,7 @@
     background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 100%) 0% 0% no-repeat padding-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 1vh 0;
 }
 .no-results > h2 > a {
     background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 100%) 0% 0% no-repeat padding-box;
@@ -43,14 +52,14 @@
     -webkit-text-fill-color: transparent;
 }
 .your-destination > p {
-    padding: 5vh;
+    padding: 1vh 5vh;
     font-size: 2vh;
     color: black;
 }
 #desc_title {
     font-weight: bold;
     font-size: 3vh;
-    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 50%, #EF3769 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(120deg, #f68667 0%, #EF3769 100%) 0% 0% no-repeat padding-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -58,15 +67,27 @@
     color: #002527;
     font-weight: bold;
 }
+.your-destination > img {
+    width: 35vw;
+    border: 2px solid;
+    border-image: linear-gradient(120deg, #FCC965 0%, #EF3769 100%) 1;
+    border-radius: 1%;
+}
+#active {
+    display: flex;
+}
 #compass-image {
     background-image: url("../img/uploads/compass.png");
     background-size: 100%;
+    background-repeat: no-repeat;
     width: 35vw;
     height: 35vw;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 #pointer {
     position: relative;
@@ -78,9 +99,126 @@
     left: 48.9%;    /*48.9 center, 3.19, one move*/
     top: 48.9%;     /*48.9 center, 3.23 one move*/
 }
-.fa-chevron-circle-left, .fa-chevron-circle-right {
+.results-container i {
     font-size: 6vh !important;
     background: transparent linear-gradient(120deg, #f47767 0%, #f25469 100%) 0% 0% no-repeat padding-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: absolute;
+}
+.fa-chevron-circle-left {
+    margin-right: 91vw;
+}
+.fa-chevron-circle-right {
+    margin-left: 91vw;
+}
+@media only screen and (max-device-width: 1050px) {
+    #buttons-pc {
+        position: absolute;
+    }
+    .results-container {
+        flex-direction: column;
+    }
+    #container-for-smaller {
+        /* width: 80vw;
+        height: 90vh; */
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 6px 6px #00000029;
+        border-radius: 5vh;
+        background-color: rgba(196, 196, 196, 0.2);
+        margin: 1vh 1vw;
+        font-family: 'Red Hat Text', sans-serif;
+        font-weight: 300;
+        backdrop-filter: blur(7px);
+    }
+    .your-destination > img {
+        width: 58vw;
+    }
+    .your-destination, .your-preferences, .no-results {
+        width: 80vw;
+        min-height: 31vh;
+        box-shadow: none;
+        background-color: transparent;
+        font-weight: 300;
+        backdrop-filter: none;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .no-results {
+        min-height: 5vh;
+    }
+    .your-destination {
+        height: 59vh;
+    }
+    .your-destination > h1 {
+        margin: 0;
+    }
+    .your-destination > h2 {
+        margin: 0 0 1vh 0;
+    }
+    .your-destination > p {
+        padding: 0 2vh;
+        margin: 0;
+    }
+    .your-preferences {
+        flex-direction: column;
+    }
+    .your-preferences > h1 {
+       font-size: 3.5vh;
+       margin: 0;
+    }
+    #compass-image {
+        position: fixed;
+        margin-top: 5vh;
+    }
+    #pointer {
+        width: 2vw;
+        height: 2vw;
+    }
+}
+@media only screen and (max-device-width: 420px) {
+    .fa-chevron-circle-left {
+        margin-right: 85vw;
+    }
+    .fa-chevron-circle-right {
+        margin-left: 85vw;
+    }
+    .results-container > i {
+        font-size: 4vh !important;
+    }
+    #container-for-smaller {
+        width: 95vw;
+    }
+    .your-destination, .your-preferences {
+        min-height: 15vh;
+    }
+    .your-destination {
+        height: 60vh;
+    }
+    .your-preferences > h1 {
+        display: none;
+    }
+    .your-destination > h1 {
+        font-size: 3.5vh;
+    }
+    .your-destination > img {
+        width: 70vw;
+    }
+    .your-destination > p {
+        width: 70vw;
+        margin: 0.5vh 0vw;
+    }
+    #compass-image {
+        width: 50vw;
+        height: 50vw;
+        position: static;
+        margin: 0;
+        padding-bottom: 1vh;
+    }
+    #pointer {
+        width: 3vw;
+        height: 3vw;
+    }
 }
