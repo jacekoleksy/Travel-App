@@ -44,24 +44,24 @@ Specyfikacja projektu:
      * [x] 2. Diagram ERD umieszczony [poniżej](#erd Goto Diagram ERD)  
      * [x] 3. Systematyka pracy GIT: Starałem się codziennie na koniec pracy wysyłać zmiany na git'a  
      * [x] 4. Prototyp aplikacji wysłany wcześniej obejmował taką samą funkcjonalność  
-      * [x] 5. Pliki head.php oraz nav.php są otwierane na każdej podstronie  
-      * [x] 6. Połączenie z bazą PostgreSQL
-      * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [poniżej](#erd Goto Diagram ERD)
-      * [x] 8. Wersja PHP 7.4.3
-      * [x] 9. JS (oraz JQuery) używane do animacji oraz przy pytaniach z Kompasu do wczytywania i wysyłania danych
-      * [x] 10. Ostatecznie użyłem jedynie metody POST. Fetch API używane do wszytywania i wysyłania danych w Quizie
-      * [x] 11. Główne style zawarte w pliku style.css, reszta w plikach do każdej podstrony (np. settings.php -> settings.css)
-      * [x] 12. Strona jest responsywna na wszystkich typach urządzeń (PC, Tablet, Smartfon)
-      * [x] 13. Logowanie wymaga od użytkownika podania pełnych danych, dodatkowo sprawdzany jest format email, a hasło musi zawierać minimum: 1 literę dużą, 1 literę małą, 1 znak, 1 cyfrę
-      * [x] 14. Wartości sesji są zaimplementowane i kasowane po wylogowaniu
-      * [x] 15. system sprawdza czy użytkownik ma ustawioną wartość `enabled` w bazie na `true`, tym samym sprawiając że ma dostęp do niektórych podstron
-      * [x] 16. Jedyne role jakie użyłem to użytkownik zalogowany i niezalogowany - z dostępem do odpowiednich podstron z użyciem sesji
-      * [x] 17. Wylogowanie
-      * [x] 18. Zastosowałem wywołanie widoków np. w pliku Questions.php
-      * [x] 19. Stosuję m.in. inner join na tabeli results
-      * [x] 20. Hasła są hashowane
-      * [x] 21. Powtarzalny kod jest zawarty w plikach head.php oraz nav.php
-      * [x] 22. Czystość i przejrzystość kodu
+     * [x] 5. Pliki head.php oraz nav.php są otwierane na każdej podstronie  
+     * [x] 6. Połączenie z bazą PostgreSQL
+     * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [poniżej](#erd Goto Diagram ERD)
+     * [x] 8. Wersja PHP 7.4.3
+     * [x] 9. JS (oraz JQuery) używane do animacji oraz przy pytaniach z Kompasu do wczytywania i wysyłania danych
+     * [x] 10. Ostatecznie użyłem jedynie metody POST. Fetch API używane do wszytywania i wysyłania danych w Quizie
+     * [x] 11. Główne style zawarte w pliku style.css, reszta w plikach do każdej podstrony (np. settings.php -> settings.css)
+     * [x] 12. Strona jest responsywna na wszystkich typach urządzeń (PC, Tablet, Smartfon)
+     * [x] 13. Logowanie wymaga od użytkownika podania pełnych danych, dodatkowo sprawdzany jest format email, a hasło musi zawierać minimum: 1 literę dużą, 1 literę małą, 1 znak, 1 cyfrę
+     * [x] 14. Wartości sesji są zaimplementowane i kasowane po wylogowaniu
+     * [x] 15. system sprawdza czy użytkownik ma ustawioną wartość `enabled` w bazie na `true`, tym samym sprawiając że ma dostęp do niektórych podstron
+     * [x] 16. Jedyne role jakie użyłem to użytkownik zalogowany i niezalogowany - z dostępem do odpowiednich podstron z użyciem sesji
+     * [x] 17. Wylogowanie
+     * [x] 18. Zastosowałem wywołanie widoków np. w pliku Questions.php
+     * [x] 19. Stosuję m.in. inner join na tabeli results
+     * [x] 20. Hasła są hashowane
+     * [x] 21. Powtarzalny kod jest zawarty w plikach head.php oraz nav.php
+     * [x] 22. Czystość i przejrzystość kodu
 
 ## Diagram ERD:
 ![ERD](https://user-images.githubusercontent.com/47715648/148699194-d97f4d6d-266b-469b-951f-e3cf4a6b0b96.png)
