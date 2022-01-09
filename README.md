@@ -39,11 +39,11 @@ Specyfikacja projektu:
 ![image](https://user-images.githubusercontent.com/47715648/148698964-511520d0-0ad4-497c-8a84-b93114df220d.png)
 
 * Aplikacja po kliknięciu w Log out wylogowuje użytkownika i usuwa sesję, oraz powraca do początkowego widoku z logiem. 
-* Opis projektu względem [Kryteriów ewaluacji projektu] (https://torus.uck.pk.edu.pl/~awidlak/content/25)
-      * [x] 1. Część backendowa jest napisana obiektowo  
-      * [x] 2. Diagram ERD umieszczony [poniżej](#erd Goto Diagram ERD)  
-      * [x] 3. Systematyka pracy GIT: Starałem się codziennie na koniec pracy wysyłać zmiany na git'a  
-      * [x] 4. Prototyp aplikacji wysłany wcześniej obejmował taką samą funkcjonalność  
+* Opis projektu względem [Kryteriów ewaluacji projektu] (https://torus.uck.pk.edu.pl/~awidlak/content/25):
+     * [x] 1. Część backendowa jest napisana obiektowo  
+     * [x] 2. Diagram ERD umieszczony [poniżej](#erd Goto Diagram ERD)  
+     * [x] 3. Systematyka pracy GIT: Starałem się codziennie na koniec pracy wysyłać zmiany na git'a  
+     * [x] 4. Prototyp aplikacji wysłany wcześniej obejmował taką samą funkcjonalność  
       * [x] 5. Pliki head.php oraz nav.php są otwierane na każdej podstronie  
       * [x] 6. Połączenie z bazą PostgreSQL
       * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [poniżej](#erd Goto Diagram ERD)
