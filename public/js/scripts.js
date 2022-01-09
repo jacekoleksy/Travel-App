@@ -31,9 +31,9 @@ function checkACookieExists(cName) {
     else return false;
 }
 function settings() {
-    document.getElementById("settings-name").value = getCookie("name");
-    document.getElementById("settings-surname").value = getCookie("surname");
-    document.getElementById("settings-email").value = getCookie("user");
+    document.querySelector("[id='settings-name']").value = getCookie("name");
+    document.querySelector("[id='settings-surname']").value = getCookie("surname");
+    document.querySelector("[id='settings-email']").value = getCookie("user");
 }
 function menuMobileShow() {
     $("#menu-mobile").stop().slideToggle(500);

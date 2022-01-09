@@ -1,4 +1,4 @@
-/* Login page */
+/* Login page and Main Style*/
 body {
     margin: 0;
 }
@@ -7,14 +7,12 @@ body {
     object-fit: cover;
     width: 100vw;
     height: 100vh;
-  }
+}
 .container {
     position: fixed;
     font-family: 'Red Hat Text', sans-serif;
     width: 100vw;
     height: 100vh;
-    /* background-image: url("../img/uploads/background.JPG");
-    background-repeat: no-repeat; */
     background-position: center;
     background-size: cover;
     display: flex;
@@ -137,6 +135,21 @@ button {
 button:hover {
     background-position: right center !important;
 }
+.content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    min-width: 60vw;
+    min-height: 80vh;
+    box-shadow: 0px 6px 6px #00000029;
+    border-radius: 5vh;
+    background-color: rgba(196, 196, 196, 0.2);
+    backdrop-filter: blur(7px);
+}
 
 @media only screen and (max-device-width: 1050px) {
     .logo {
@@ -175,15 +188,12 @@ button:hover {
     hr {
         border-left: 0.4vh solid #002527;
     }
+    .content {
+        min-width: 90%;
+    }
 }
 
 @media only screen and (max-device-width: 420px) {
-    /* #movie {
-        width: 600% !important;
-        height: auto !important;
-        margin-left: -350vw !important;
-        margin-top: -10vh;
-    } */
     form h1 {
         margin: 0;
     }
@@ -246,140 +256,3 @@ button:hover {
         height: 7vh;
     }
 }
-/* End of Login page */
-
-/* Settings page */
-.settings-container {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    min-width: 60vw;
-    min-height: 80vh;
-    box-shadow: 0px 6px 6px #00000029;
-    border-radius: 5vh;
-    background-color: rgba(196, 196, 196, 0.2);
-    backdrop-filter: blur(7px);
-}
-.settings-container > form > ul {
-    margin: 0;
-}
-ul {
-    flex-direction: row;
-    list-style-type: none;
-    width: 40vw;
-    padding: 0;
- }
- li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
- }
- li > h3 {
-    margin: 0 auto;
-    text-align: left;
-    width: 10vw;
-    padding: 0;
-    display: inline;
-    margin-right: auto;
-    font-size: 2vh;
- }
- ul > h2 {
-    text-align: left;
-    font-size: 4vh;
-    padding: 0vh 5vw;
- }
- li > input {
-    margin-left: auto;
-    margin: 1.5vh;
-    width: 20vw;
- }
-
-@media only screen and (max-device-width: 1050px) {
-    .settings-container {
-        min-width: 90%;
-    }
-    ul { 
-        width: 80vw;
-    }
-    li > h3 {
-        padding: 0vh 5vw;
-        width: 30vw;
-        font-size: 1.9vh;
-    }
-    li > input {
-        font-size: 1.5vh;
-        width: 35vw;
-        margin: 1.3vh;
-    }
-    ul > h2 {
-        text-align: center;
-        margin-bottom: 1vh;
-    }
-    h1 {
-        text-align: center;
-    }
-}
-
-@media only screen and (max-device-width: 420px) { 
-    ul {
-        width: 80vw;
-    }
-    li > h3 {
-        width: 30vw;
-        padding: 0;
-        font-size: 1.7vh;
-    }
-    li > input {
-        width: 45vw;
-    }
-}
-/* End of Settings page */
-
-/* About Us page */
-.settings-container > .logo {
-    margin-top: 0;
-}
-.settings-container > .logo > img{
-    width: 30vw;
-}
-.settings-container > h2 {
-    font-size: 3vh;
-}
-.settings-container > p, .settings-container > h2, .settings-container > h3, .settings-container > h4 {
-    padding: 0vh 5vw;
-    text-align: center;
-}
-.settings-container > h2 > a {
-    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 45%, #EF3769 55%, #FCC965 100%) 0% 0% no-repeat padding-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 3vh;
-}
-.settings-container > h3 {
-    font-size: 2vh;
-}
-.settings-container > h4 {
-    font-size: 1.5vh;
-}
-h4 > a {
-    font-size: 1.5vh;
-    background: transparent linear-gradient(120deg, #FCC965 0%,#EF3769 100%) 0% 0% no-repeat padding-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-@media only screen and (max-device-width: 1050px) { 
-    .settings-container > .logo > img{
-        width: 70vw;
-    }
-    .settings-container > h2 {
-        font-size: 2vh;
-    }
-    .settings-container > h2 > a {
-        font-size: 2vh;
-    }
-}
-/* End of About Us page */

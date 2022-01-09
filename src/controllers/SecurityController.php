@@ -131,10 +131,6 @@ class SecurityController extends AppController {
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/results");
         } 
-        // else if ($_COOKIE['questionnumber'] > $this->$questions->getNumberOfQuestions() + 1) {
-        //     $this->userRepository->showLastResult($_COOKIE['user']);
-        //     return $this->render('compass', ['value_h' => [$result->getValueH()], 'value_w' => [$result->getValueW()], 'name' => [$result->getName()], 'description' => [$result->getDesc()]]);
-        // }
         else if ($_COOKIE['questionnumber'] == 1) {
             setcookie("value_w", 0, time() + (12 * 86400 * 30), "/");
             setcookie("value_h", 0, time() + (12 * 86400 * 30), "/");
@@ -153,17 +149,34 @@ class SecurityController extends AppController {
 
         $this->cookieNotExists();
 
-        if (!$this->isPost()) {
+        if (!$this->isGet()) {
             return $this->render('compass');
         }
         else {
-            setcookie("value_w", $_COOKIE['value_w'] + $_POST['opinion']*$this->$questions->getWidthValue($_COOKIE['questionnumber']), time() + (12 * 86400 * 30), "/");
-            setcookie("value_h", $_COOKIE['value_h'] + $_POST['opinion']*$this->$questions->getHeightValue($_COOKIE['questionnumber']), time() + (12 * 86400 * 30), "/");
+            setcookie("value_w", $_COOKIE['value_w'] + $_GET['opinion']*$this->$questions->getWidthValue($_COOKIE['questionnumber']), time() + (12 * 86400 * 30), "/");
+            setcookie("value_h", $_COOKIE['value_h'] + $_GET['opinion']*$this->$questions->getHeightValue($_COOKIE['questionnumber']), time() + (12 * 86400 * 30), "/");
             setcookie("questionnumber", $_COOKIE['questionnumber'] + 1, time() + (12 * 86400 * 30), "/");
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/compass");
+    }
+
+    public function recommended()
+    {
+        if (!isset($_SESSION)){
+            session_start();
+        }
+
+        $this->cookieNotExists();
+
+        $recommended = $this->userRepository->showRecommended($_COOKIE["user"]);
+
+        if (!$recommended) {
+            return $this->render('results', ['error' => ['No results yet!', 'You need to complete the ', 'Compass form']]);
+        }
+
+        $this->render('recommended', ['recommended' => $recommended]);
     }
 
     public function results()

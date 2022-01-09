@@ -13,12 +13,12 @@
     </video>
     <div class="container">
         <?php include_once('nav.php'); ?>
-        <div class="settings-container">
+        <div class="content">
             <?php if(isset($currentquestion) && isset($questionnum) && isset($questiontitle)){ ?>
                 <h1>Question <?php echo $currentquestion ?> of <?php echo $questionnum ?></h1>
                 <h2> <?php echo $questiontitle ?></h2>
                 <hr>
-                <form class="compass" action="/compass_action" method="POST">
+                <form class="compass" action="/compass_action" method="GET">
                     <button type="submit" value=-2 name="opinion">Strongly Disagree</button>
                     <button type="submit" value=-1 name="opinion">Disagree</button>
                     <button type="submit" value=0 name="opinion">No Opinion</button>

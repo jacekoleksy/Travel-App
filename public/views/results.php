@@ -24,7 +24,11 @@
                     <?php } else { ?>
                         <div class='your-destination'><h1>Your destination</h1> 
                     <?php } ?>
-                    <h2><?php echo $result['name'] ?> </h2>
+                    <h2><?php echo $result['name'];
+                    if ($result['country'] !== null) {
+                        echo ", ".$result['country'];
+                    } ?>
+                    </h2>
                     <?php 
                     $name = 'public\img\uploads\\'.$result['name'].'.jpg';
                     $left = 48.6 + $result['value_w']*3.22;

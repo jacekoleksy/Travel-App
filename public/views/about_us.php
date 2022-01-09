@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/about_us.css">
     <?php include_once('head.php'); ?>
     <title>Travel Compass</title>
 </head>
@@ -12,7 +13,7 @@
     </video>
     <div class="container">
         <?php include_once('nav.php'); ?>
-        <div class="settings-container">
+        <div class="content">
             <div class="logo">
                 <img src=public/img/uploads/logo.png>
             </div>

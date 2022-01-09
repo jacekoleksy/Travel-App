@@ -12,6 +12,7 @@ Router::post('settings', 'SecurityController');
 Router::post('settings_action', 'SecurityController');
 Router::get('compass', 'SecurityController');
 Router::get('compass_action', 'SecurityController');
+Router::get('recommended', 'SecurityController');
 Router::post('results', 'SecurityController');
 Router::post('logout', 'SecurityController');
 Router::post('about_us', 'DefaultController');

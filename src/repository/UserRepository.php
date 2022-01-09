@@ -149,7 +149,7 @@ class UserRepository extends Repository
         $id_user = $this->getUserId($user);
 
         $stmt = $this->database->connect()->prepare('
-            SELECT users_results.id_user_results, users_results.value_h, users_results.value_w, users_results.id_results, results.name, results.description from users_results 
+            SELECT users_results.id_user_results, users_results.value_h, users_results.value_w, users_results.id_results, results.country, results.name, results.description from users_results 
             inner join results on users_results.id_results = results.id_results 
             WHERE id_users = :id_users order by users_results.id_user_results desc;
         ');
@@ -166,61 +166,20 @@ class UserRepository extends Repository
         return $results;
     }
 
-    public function showResults(string $email) {
-        $user = $this->getUser($email);
-        $id_user = $this->getUserId($user);
-
+    public function showRecommended() {
         $stmt = $this->database->connect()->prepare('
-            SELECT users_results.id_user_results, users_results.value_h, users_results.value_w, users_results.id_results, results.name, results.description from users_results 
-            inner join results on users_results.id_results = results.id_results 
-            WHERE id_users = :id_users order by users_results.id_user_results desc;
+            SELECT * from results
+            order by id_results asc;
         ');
 
-        $stmt->bindParam(':id_users', $id_user, PDO::PARAM_INT);
         $stmt->execute();
 
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($result == false) {
+        if ($results == false) {
             return null;
         }
 
-        return new Result(
-            $result['id_user_results'],
-            $result['value_h'],
-            $result['value_w'],
-            $result['id_results'],
-            $result['name'],
-            $result['description']
-        );
-    }
-
-    public function showLastResult(string $email) {
-        $user = $this->getUser($email);
-        $id_user = $this->getUserId($user);
-
-        $stmt = $this->database->connect()->prepare('
-            SELECT users_results.id_user_results, users_results.value_h, users_results.value_w, users_results.id_results, results.name, results.description from users_results 
-            inner join results on users_results.id_results = results.id_results 
-            WHERE id_users = :id_users order by id_user_results desc limit 1;
-        ');
-
-        $stmt->bindParam(':id_users', $id_user, PDO::PARAM_INT);
-        $stmt->execute();
-
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($result == false) {
-            return null;
-        }
-
-        return new Result(
-            $result['id_user_results'],
-            $result['value_h'],
-            $result['value_w'],
-            $result['id_results'],
-            $result['name'],
-            $result['description']
-        );
+        return $results;
     }
 }

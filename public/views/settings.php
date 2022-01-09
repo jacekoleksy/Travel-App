@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/settings.css">
     <?php include_once('head.php'); ?>
     <title>Travel Compass</title>
 </head>
@@ -12,7 +13,7 @@
     </video>
     <div class="container">
         <?php include_once('nav.php'); ?>
-        <div class="settings-container">
+        <div class="content">
             <form class="login" action="/settings_action" method="POST">
             <h1>Your account</h1>
                 <div class="messages">

@@ -5,6 +5,7 @@ class Result {
     private $value_h;
     private $value_w;
     private $id_results;
+    private $country;
     private $name;
     private $description;
 
@@ -13,6 +14,7 @@ class Result {
         int $value_h,
         int $value_w,
         int $id_results,
+        string $country,
         string $name,
         string $description
     ) {
@@ -20,6 +22,7 @@ class Result {
         $this->value_h = $value_h;
         $this->value_w = $value_w;
         $this->id_results = $id_results;
+        $this->country = $country;
         $this->name = $name;
         $this->description = $description;
     }
@@ -42,6 +45,11 @@ class Result {
     public function getIdResult(): int
     {
         return $this->id_results;
+    }
+
+    public function getCountry(): string
+    {
+        return $this->country;
     }
 
     public function getName(): string
