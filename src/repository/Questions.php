@@ -57,4 +57,30 @@ class Questions extends Repository
 
         return $numberofquesitons['value_h'];
     }
+
+    public function getAllQuestions(): ?array
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT id_questions, description FROM questions
+            ORDER BY id_questions
+        ');
+        $stmt->execute();
+
+        $quesitons = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $quesitons;
+    }
+
+    public function getQuestions()
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT id_questions, value_h, value_w FROM questions
+            ORDER BY id_questions
+        ');
+        $stmt->execute();
+
+        $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $questions;
+    }
 }

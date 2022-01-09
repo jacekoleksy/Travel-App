@@ -7,15 +7,35 @@ hr {
 }
 h1 {
     margin: 0;
+    color: #002527;
+    text-align: center;
 }
 h2 {
     color: white;
     text-align: center;
+    padding: 0vh 5vh;
+    font-size: 2.5vh;
+    min-height: 5vh;
 }
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+h1 i {
+    font-size: 6vh !important;
+    color: #002527;
+    padding: 0 2vh;
+    position: absolute;
+    margin-top: 1vh;
+}
+i.fa-chevron-circle-left {
+    margin-left: -10vw;
+    display: none;
+}
+.fa-redo-alt, h1 > a {
+    margin-left: 1vw;
+    position: absolute;
 }
 button:nth-child(1) {
     background: transparent linear-gradient(120deg, #c04a4a 0%, #f61011 100%) 0% 0% no-repeat padding-box;
@@ -41,4 +61,23 @@ button {
 }
 button:hover {
     background-position: right center;
+}
+
+@media only screen and (max-device-width: 1050px) {
+    i.fa-chevron-circle-left {
+        margin-top: 40vh;
+        margin-left: -10vw;
+    }
+    h1 > a {
+        margin-top: 39vh;
+        margin-left: -4vh;
+    }
+}
+@media only screen and (max-device-width: 420px) {
+    h1 {
+        font-size: 5vh;
+    }
+    h1 > a {
+        margin-left: -5vh;
+    }
 }

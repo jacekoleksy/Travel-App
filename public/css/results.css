@@ -135,7 +135,7 @@
         width: 58vw;
     }
     .your-destination, .your-preferences, .no-results {
-        width: 80vw;
+        width: 90vw;
         min-height: 31vh;
         box-shadow: none;
         background-color: transparent;
@@ -157,15 +157,14 @@
         margin: 0 0 1vh 0;
     }
     .your-destination > p {
-        padding: 0 2vh;
+        padding: 0 3vh;
         margin: 0;
     }
     .your-preferences {
         flex-direction: column;
     }
     .your-preferences > h1 {
-       font-size: 3.5vh;
-       margin: 0;
+       display: none;
     }
     #compass-image {
         position: fixed;
@@ -183,20 +182,17 @@
     .fa-chevron-circle-right {
         margin-left: 85vw;
     }
-    .results-container > i {
+    .results-container i {
         font-size: 4vh !important;
     }
     #container-for-smaller {
         width: 95vw;
     }
     .your-destination, .your-preferences {
-        min-height: 15vh;
+        min-height: 20vh;
     }
     .your-destination {
-        height: 60vh;
-    }
-    .your-preferences > h1 {
-        display: none;
+        height: 65vh;
     }
     .your-destination > h1 {
         font-size: 3.5vh;
@@ -205,12 +201,13 @@
         width: 70vw;
     }
     .your-destination > p {
-        width: 70vw;
+        width: 75vw;
         margin: 0.5vh 0vw;
+        padding: 0;
     }
     #compass-image {
-        width: 50vw;
-        height: 50vw;
+        width: 45vw;
+        height: 45vw;
         position: static;
         margin: 0;
         padding-bottom: 1vh;

@@ -30,13 +30,8 @@ function checkACookieExists(cName) {
     }
     else return false;
 }
-function settings() {
-    document.querySelector("[id='settings-name']").value = getCookie("name");
-    document.querySelector("[id='settings-surname']").value = getCookie("surname");
-    document.querySelector("[id='settings-email']").value = getCookie("user");
-}
 function menuMobileShow() {
-    $("#menu-mobile").stop().slideToggle(500);
+    $("#menu-mobile").stop().slideToggle(500); 
 }
 function menuMobileHide() {
     if ($("#menu-mobile").display = "block") {
@@ -58,10 +53,10 @@ function nextResult() {
         prev = divsDestination.length - 1;
     }
 
-    $(divsDestination[prev]).fadeOut(500);
-    $(divsPreferences[prev]).fadeOut(500);
-    $(divsDestination[num]).css("display", "flex").hide().delay(500).fadeIn(500);
-    $(divsPreferences[num]).css("display", "flex").hide().delay(500).fadeIn(500);
+    $(divsDestination[prev]).stop().fadeOut(500);
+    $(divsPreferences[prev]).stop().fadeOut(500);
+    $(divsDestination[num]).stop().css("display", "flex").hide().delay(500).fadeIn(500);
+    $(divsPreferences[num]).stop().css("display", "flex").hide().delay(500).fadeIn(500);
 }
 function prevResult() {
     divsDestination = document.querySelectorAll('.your-destination');
@@ -76,10 +71,10 @@ function prevResult() {
         next = num - 1;
     }
 
-    $(divsDestination[num]).fadeOut(500);
-    $(divsPreferences[num]).fadeOut(500);
-    $(divsDestination[next]).css("display", "flex").hide().delay(500).fadeIn(500);
-    $(divsPreferences[next]).css("display", "flex").hide().delay(500).fadeIn(500);
+    $(divsDestination[num]).stop().fadeOut(500);
+    $(divsPreferences[num]).stop().fadeOut(500);
+    $(divsDestination[next]).stop().css("display", "flex").hide().delay(500).fadeIn(500);
+    $(divsPreferences[next]).stop().css("display", "flex").hide().delay(500).fadeIn(500);
 
     num--;
 }

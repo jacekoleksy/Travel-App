@@ -16,5 +16,7 @@ Router::get('recommended', 'SecurityController');
 Router::post('results', 'SecurityController');
 Router::post('logout', 'SecurityController');
 Router::post('about_us', 'DefaultController');
+Router::post('questions', 'DefaultController');
+Router::post('answer', 'DefaultController');
 
 Router::run($path);

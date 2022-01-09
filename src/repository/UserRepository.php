@@ -110,26 +110,26 @@ class UserRepository extends Repository
         ');
 
         $stmt->execute([
-            $_COOKIE['value_h'],
-            $_COOKIE['value_w'],
+            $_SESSION['value_h'],
+            $_SESSION['value_w'],
         ]);
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $id_result = $data['id_results'];
 
-        if ($_COOKIE['value_h'] > 13) 
+        if ($_SESSION['value_h'] > 13) 
             $value_h = 13;
-        else if ($_COOKIE['value_h'] < -13) 
+        else if ($_SESSION['value_h'] < -13) 
             $value_h = -13;
         else 
-            $value_h = $_COOKIE['value_h'];
-        if ($_COOKIE['value_w'] > 13) 
+            $value_h = $_SESSION['value_h'];
+        if ($_SESSION['value_w'] > 13) 
             $value_w = 13;
-        else if ($_COOKIE['value_w'] < -13) 
+        else if ($_SESSION['value_w'] < -13) 
             $value_w = -13;
         else 
-            $value_w = $_COOKIE['value_w'];
+            $value_w = $_SESSION['value_w'];
 
         $stmt = $this->database->connect()->prepare('
             INSERT INTO users_results (id_users, value_h, value_w, id_results)
