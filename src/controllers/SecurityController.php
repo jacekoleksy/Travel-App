@@ -122,23 +122,26 @@ class SecurityController extends AppController {
 
         $this->cookieNotExists();
 
-        if (!isset($_COOKIE['questionnumber'])) {
+        // if (!isset($_COOKIE['questionnumber'])) {
             setcookie("questionnumber", 1, time() + (12 * 86400 * 30), "/");
-        }
-        else if ($_COOKIE['questionnumber'] == $this->$questions->getNumberOfQuestions() + 1) {
-            $this->userRepository->addResult($_COOKIE['user']);
-            setcookie("questionnumber", $_COOKIE['questionnumber'] + 1, time() + (12 * 86400 * 30), "/");
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/results");
-        } 
-        else if ($_COOKIE['questionnumber'] == 1) {
+        // }
+        // else if ($_COOKIE['questionnumber'] == $this->$questions->getNumberOfQuestions() + 1) {
+        //     $this->userRepository->addResult($_COOKIE['user']);
+        //     setcookie("questionnumber", $_COOKIE['questionnumber'] + 1, time() + (12 * 86400 * 30), "/");
+        //     $url = "http://$_SERVER[HTTP_HOST]";
+        //     header("Location: {$url}/results");
+        // } 
+        // else if ($_COOKIE['questionnumber'] == 1) {
             setcookie("value_w", 0, time() + (12 * 86400 * 30), "/");
             setcookie("value_h", 0, time() + (12 * 86400 * 30), "/");
-        }
+        // }
 
         if (!$this->isPost()) {
             return $this->render('compass', ['currentquestion' => $_COOKIE['questionnumber'], 'questionnum' => $this->$questions->getNumberOfQuestions(), 'questiontitle' => $this->$questions->getQuestionTitle($_COOKIE['questionnumber'])]);
         }
+
+
+
     }
 
     public function compass_action()

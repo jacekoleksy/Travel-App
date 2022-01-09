@@ -6,6 +6,9 @@
 * [Technologies](#technologies "Goto General Technologies")
 * [Setup](#setup "Goto General Steup")
 
+## General Info
+Projekt polega na napisaniu gry Statki o ogólnych założeniach:
+
 ## Technologies
 Project is created with:
 * PHP version: 7.4.3-fpm-alpine3.11

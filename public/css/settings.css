@@ -1,0 +1,71 @@
+/* Settings page */
+.content > form > ul {
+    margin: 0;
+}
+ul {
+    flex-direction: row;
+    list-style-type: none;
+    width: 40vw;
+    padding: 0;
+ }
+ li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ }
+ li > h3 {
+    margin: 0 auto;
+    text-align: left;
+    width: 10vw;
+    padding: 0;
+    display: inline;
+    margin-right: auto;
+    font-size: 2vh;
+ }
+ ul > h2 {
+    text-align: left;
+    font-size: 4vh;
+    padding: 0vh 5vw;
+ }
+ li > input {
+    margin-left: auto;
+    margin: 1.5vh;
+    width: 20vw;
+ }
+
+@media only screen and (max-device-width: 1050px) {
+    ul { 
+        width: 80vw;
+    }
+    li > h3 {
+        padding: 0vh 5vw;
+        width: 30vw;
+        font-size: 1.9vh;
+    }
+    li > input {
+        font-size: 1.5vh;
+        width: 35vw;
+        margin: 1.3vh;
+    }
+    ul > h2 {
+        text-align: center;
+        margin-bottom: 1vh;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-device-width: 420px) { 
+    ul {
+        width: 80vw;
+    }
+    li > h3 {
+        width: 30vw;
+        padding: 0;
+        font-size: 1.7vh;
+    }
+    li > input {
+        width: 45vw;
+    }
+}

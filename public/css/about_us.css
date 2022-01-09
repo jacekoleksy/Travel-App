@@ -1,0 +1,43 @@
+/* About Us page */
+.content > .logo {
+    margin-top: 0;
+}
+.content > .logo > img{
+    width: 30vw;
+}
+.content > h2 {
+    font-size: 3vh;
+}
+.content > p, .content > h2, .content > h3, .content > h4 {
+    padding: 0vh 5vw;
+    text-align: center;
+}
+.content > h2 > a {
+    background: transparent linear-gradient(120deg, #FCC965 0%, #EF3769 45%, #EF3769 55%, #FCC965 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3vh;
+}
+.content > h3 {
+    font-size: 2vh;
+}
+.content > h4 {
+    font-size: 1.5vh;
+}
+h4 > a {
+    font-size: 1.5vh;
+    background: transparent linear-gradient(120deg, #FCC965 0%,#EF3769 100%) 0% 0% no-repeat padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-device-width: 1050px) { 
+    .content > .logo > img{
+        width: 70vw;
+    }
+    .content > h2 {
+        font-size: 2vh;
+    }
+    .content > h2 > a {
+        font-size: 2vh;
+    }
+}
