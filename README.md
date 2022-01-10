@@ -28,14 +28,14 @@ Specyfikacja projektu:
 * Strona Settings to dynamicznie wczytywana strona z edycją konta (w której nalezy każdorazowo wprowadzić poprawne hasło użytkownika do wprowadzenia zmian)  
 
 * Aplikacja po kliknięciu w Log out wylogowuje użytkownika i usuwa sesję, oraz powraca do początkowego widoku z logiem. 
-* Opis projektu względem [Kryteriów ewaluacji projektu] (https://torus.uck.pk.edu.pl/~awidlak/content/25):
+* Opis projektu względem [Kryteriów ewaluacji projektu](https://torus.uck.pk.edu.pl/~awidlak/content/25):
      * [x] 1. Część backendowa jest napisana obiektowo  
-     * [x] 2. Diagram ERD umieszczony [ERD](#erd "Goto General ERD")  
+     * [x] 2. Diagram ERD umieszczony [ERD](#erd "Goto General Diagram ERD")  
      * [x] 3. Systematyka pracy GIT: Starałem się codziennie na koniec pracy wysyłać zmiany na git'a  
      * [x] 4. Prototyp aplikacji wysłany wcześniej obejmował taką samą funkcjonalność  
      * [x] 5. Pliki head.php oraz nav.php są otwierane na każdej podstronie  
      * [x] 6. Połączenie z bazą PostgreSQL
-     * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [ERD](#erd "Goto General ERD")
+     * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [ERD](#erd "Goto General Diagram ERD")
      * [x] 8. Wersja PHP 7.4.3
      * [x] 9. JS (oraz JQuery) używane do animacji oraz przy pytaniach z Kompasu do wczytywania i wysyłania danych
      * [x] 10. Ostatecznie użyłem jedynie metody POST. Fetch API używane do wszytywania i wysyłania danych w Quizie
@@ -74,11 +74,11 @@ To run this project, just download and extract all files
 ![image](https://user-images.githubusercontent.com/47715648/148698964-511520d0-0ad4-497c-8a84-b93114df220d.png)
 
 * Tablet  
+![image](https://user-images.githubusercontent.com/47715648/148736114-17c71fff-8e55-4f1f-9a4b-0726d1a9544d.png)
+![image](https://user-images.githubusercontent.com/47715648/148736062-42d93a65-af46-4384-a549-408716687584.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698878-81c081b5-b703-46e7-87ea-047bd262cb0c.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698926-acf6c25b-258c-4b97-b9c9-b2abc2014e9f.png)
 ![image](https://user-images.githubusercontent.com/47715648/148736016-67517454-4600-496a-bda6-02b8d1d432fb.png)
-![image](https://user-images.githubusercontent.com/47715648/148736062-42d93a65-af46-4384-a549-408716687584.png)
-![image](https://user-images.githubusercontent.com/47715648/148736114-17c71fff-8e55-4f1f-9a4b-0726d1a9544d.png)
 
 * Smartphone  
 ![image](https://user-images.githubusercontent.com/47715648/148698585-4f6a3234-f39d-4570-9188-7b0a45d3cb0e.png)
