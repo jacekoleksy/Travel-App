@@ -21,18 +21,11 @@ Strona to celowy one page, stworzony po to aby uzyskać skondensowaną dawkę in
 Specyfikacja projektu:
 * Cała strona ma ustaloną większość parametrów wysokości i szerokości wartościami vh i vw, przez co można ją tylko w niewielkim stopniu skalować. Oczywiście dla każdej podstrony widoki są responsywne dla tabletów, smartfonów, etc.
 * Po kliknięciu w przycisk "Get Started" otwiera nam się okno logowania/rejestracji, gdzie z użyciem walidacji należy wprowadzić swoje dane i hasło zawierające przynajmniej jedną literę dużą, jedną małą, znak i cyfrę dla dodatkowej weryfikacji. Ewentualne błędy wyskakują tuż pod tytułem sekcji.  
-![image](https://user-images.githubusercontent.com/47715648/148698585-4f6a3234-f39d-4570-9188-7b0a45d3cb0e.png)
 * Po poprawnym zalogowaniu widzimy od razu stronę z Quizem (Kompasem) wraz z pierwszym pytaniem, na które mamy odpowiedzieć. Pytania są wyciągane za pomocą Fetch API, a faktyczny formularz wysyłamy dopiero po odpowiedzeniu na ostatnie pytanie. Wtedy też zostajemy przekierowani na stronę wyników  
-![image](https://user-images.githubusercontent.com/47715648/148698678-15fea78f-0d2f-4d87-b0d7-f06f66edae9c.png)
 *  Strona wyników przechowuje dane zawarte w tabeli users_results, czyli wynik jaki uzyskaliśmy, oraz najlepiej dopasowany cel (o wartościach będących najbliższymi tego co uzyskaliśmy). Dane to: Miejscowość, Kraj, Krótki opis, Zdjęcie, oraz wynik przedstawiony za pomocą okrągłego diva o odpowiednio ustalonych parametrach `left` i `top` pokazuje bez umieszczania cyfr, jak prezentuje się nasz wynik
-![image](https://user-images.githubusercontent.com/47715648/148698787-d9c37d60-da3a-4ad8-b07b-16789da334db.png)
 * Zakładka Recommended zawiera wszystkie polecane przez nas destynacje (tak właściwie to wszystkie jakie aktualnie są w bazie). Widok jest taki sam jak na stronie wyników (Results).  
-![image](https://user-images.githubusercontent.com/47715648/148698856-7152e0bd-c8d3-4801-aaca-3fa821164931.png)
-![image](https://user-images.githubusercontent.com/47715648/148698878-81c081b5-b703-46e7-87ea-047bd262cb0c.png)
 * Strona About to oczywiście szybki skrót, do czego powstała aplikacja  
-![image](https://user-images.githubusercontent.com/47715648/148698926-acf6c25b-258c-4b97-b9c9-b2abc2014e9f.png)
 * Strona Settings to dynamicznie wczytywana strona z edycją konta (w której nalezy każdorazowo wprowadzić poprawne hasło użytkownika do wprowadzenia zmian)  
-![image](https://user-images.githubusercontent.com/47715648/148698976-00f3cf6c-12f6-4bd0-bc1c-2fd82c6c33fd.png)
 
 * Aplikacja po kliknięciu w Log out wylogowuje użytkownika i usuwa sesję, oraz powraca do początkowego widoku z logiem. 
 * Opis projektu względem [Kryteriów ewaluacji projektu] (https://torus.uck.pk.edu.pl/~awidlak/content/25):
@@ -78,3 +71,12 @@ To run this project, just download and extract all files
 ![image](https://user-images.githubusercontent.com/47715648/148698730-80ecb05a-c472-4505-8fa7-65b1587264d4.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698913-d258110a-5025-4dac-ba2c-5fff5b0592ad.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698964-511520d0-0ad4-497c-8a84-b93114df220d.png)
+
+![image](https://user-images.githubusercontent.com/47715648/148698878-81c081b5-b703-46e7-87ea-047bd262cb0c.png)
+![image](https://user-images.githubusercontent.com/47715648/148698926-acf6c25b-258c-4b97-b9c9-b2abc2014e9f.png)
+
+![image](https://user-images.githubusercontent.com/47715648/148698585-4f6a3234-f39d-4570-9188-7b0a45d3cb0e.png)
+![image](https://user-images.githubusercontent.com/47715648/148698678-15fea78f-0d2f-4d87-b0d7-f06f66edae9c.png)
+![image](https://user-images.githubusercontent.com/47715648/148698787-d9c37d60-da3a-4ad8-b07b-16789da334db.png)
+![image](https://user-images.githubusercontent.com/47715648/148698856-7152e0bd-c8d3-4801-aaca-3fa821164931.png)
+![image](https://user-images.githubusercontent.com/47715648/148698976-00f3cf6c-12f6-4bd0-bc1c-2fd82c6c33fd.png)
