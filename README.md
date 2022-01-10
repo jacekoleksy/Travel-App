@@ -41,12 +41,12 @@ Specyfikacja projektu:
 * Aplikacja po kliknięciu w Log out wylogowuje użytkownika i usuwa sesję, oraz powraca do początkowego widoku z logiem. 
 * Opis projektu względem [Kryteriów ewaluacji projektu] (https://torus.uck.pk.edu.pl/~awidlak/content/25):
      * [x] 1. Część backendowa jest napisana obiektowo  
-     * [x] 2. Diagram ERD umieszczony [poniżej](#erd Goto General ERD)  
+     * [x] 2. Diagram ERD umieszczony [ERD](#erd "Goto General ERD")  
      * [x] 3. Systematyka pracy GIT: Starałem się codziennie na koniec pracy wysyłać zmiany na git'a  
      * [x] 4. Prototyp aplikacji wysłany wcześniej obejmował taką samą funkcjonalność  
      * [x] 5. Pliki head.php oraz nav.php są otwierane na każdej podstronie  
      * [x] 6. Połączenie z bazą PostgreSQL
-     * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [poniżej](#erd Goto General ERD)
+     * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [ERD](#erd "Goto General ERD")
      * [x] 8. Wersja PHP 7.4.3
      * [x] 9. JS (oraz JQuery) używane do animacji oraz przy pytaniach z Kompasu do wczytywania i wysyłania danych
      * [x] 10. Ostatecznie użyłem jedynie metody POST. Fetch API używane do wszytywania i wysyłania danych w Quizie
