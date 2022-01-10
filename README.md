@@ -5,6 +5,7 @@
 * [Description](#description "Goto General Description")
 * [Technologies](#technologies "Goto General Technologies")
 * [Setup](#setup "Goto General Setup")
+* [Images](#images "Goto General Images")
 
 ## General Info
 Ten projekt to odpowiednik kompasu politycznego, ale dotyczącego celu wakacyjnej podróży. Wystarczy odpowiedzieć na kilka pytań, a system obliczy destynację dopasowaną do Twoich preferencji (oczywiście w ramach danych wrzuconych do bazy danych). Wyszukiwane cele mają dwa parametry: 
@@ -74,3 +75,8 @@ Project is created with:
 
 ## Setup
 To run this project, just download and extract all files
+
+## Images
+![image](https://user-images.githubusercontent.com/47715648/148698375-07919857-6c39-4136-bbf7-911dc472f772.png)
+![image](https://user-images.githubusercontent.com/47715648/148698561-3092ef5c-4454-4790-8b65-cb4cdcfa78a1.png)
+![image](https://user-images.githubusercontent.com/47715648/148698664-e58b0090-c431-4015-b5c8-8c49a1a5526f.png)
