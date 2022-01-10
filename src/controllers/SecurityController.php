@@ -109,35 +109,6 @@ class SecurityController extends AppController {
         header("Location: {$url}/compass");
     }
 
-    public function compass()
-    {
-        $this->cookieNotExists();
-
-        if (!$this->isPost()) {
-            $_SESSION["questionnumber"] = 1;
-            $_SESSION["value_w"] = 0;
-            $_SESSION["value_h"] = 0;
-        }
-        else if(!isset($_SESSION['send'])){
-            $_SESSION['send'] = 100;
-            $questionValues = $this->questions->getQuestions();
-            $answers = explode(',', $_POST['answers']);
-            foreach ($questionValues as $key => $quest) {
-                $_SESSION['value_h'] += intval($answers[$key]) * $quest['value_h'];  
-                $_SESSION['value_w'] += intval($answers[$key]) * $quest['value_w'];  
-            }
-            $this->userRepository->addResult($_SESSION['user']);
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/results");
-        } 
-        else {
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/results");
-        }
-
-        return $this->render('compass', ['currentquestion' => $_SESSION['questionnumber'], 'questionnum' => $this->questions->getNumberOfQuestions(), 'questiontitle' => $this->questions->getQuestionTitle($_SESSION['questionnumber'])]);
-    }
-
     public function recommended()
     {
         $this->cookieNotExists();
@@ -145,7 +116,7 @@ class SecurityController extends AppController {
         $recommended = $this->userRepository->showRecommended($_SESSION["user"]);
 
         if (!$recommended) {
-            return $this->render('results', ['error' => ['No results yet!', 'You need to complete the ', 'Compass form']]);
+            return $this->render('recommended', ['error' => ['No results yet!', 'No data in Database', ' ']]);
         }
 
         $this->render('recommended', ['recommended' => $recommended]);

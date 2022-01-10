@@ -61,8 +61,9 @@ class Questions extends Repository
     public function getAllQuestions(): ?array
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT id_questions, description FROM questions
-            ORDER BY id_questions
+            SELECT questions.id_questions, questions.description
+            FROM questions
+            ORDER BY questions.id_questions
         ');
         $stmt->execute();
 
@@ -74,8 +75,9 @@ class Questions extends Repository
     public function getQuestions()
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT id_questions, value_h, value_w FROM questions
-            ORDER BY id_questions
+            SELECT questions.id_questions, questions.value_h, questions.value_w
+            FROM questions
+            ORDER BY questions.id_questions
         ');
         $stmt->execute();
 

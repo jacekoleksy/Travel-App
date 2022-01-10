@@ -10,13 +10,12 @@ Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('settings', 'SecurityController');
 Router::post('settings_action', 'SecurityController');
-Router::get('compass', 'SecurityController');
-Router::get('compass_action', 'SecurityController');
 Router::get('recommended', 'SecurityController');
 Router::post('results', 'SecurityController');
 Router::post('logout', 'SecurityController');
 Router::post('about_us', 'DefaultController');
-Router::post('questions', 'DefaultController');
-Router::post('answer', 'DefaultController');
+Router::get('compass', 'QuestionsController');
+Router::post('questions', 'QuestionsController');
+Router::post('answer', 'QuestionsController');
 
 Router::run($path);
