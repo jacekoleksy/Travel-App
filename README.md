@@ -30,10 +30,10 @@ Specyfikacja projektu:
 * Aplikacja po kliknięciu w Log out wylogowuje użytkownika i usuwa sesję, oraz powraca do początkowego widoku z logiem. 
 * Opis projektu względem [Kryteriów ewaluacji projektu](https://torus.uck.pk.edu.pl/~awidlak/content/25):
      * [x] 1. Część backendowa jest napisana obiektowo  
-     * [x] 2. Diagram ERD umieszczony [ERD](#erd "Goto General Diagram ERD")  
+     * [x] 2. Diagram [ERD](#erd "Goto General Diagram ERD") umieszczony
      * [x] 3. Systematyka pracy GIT: Starałem się codziennie na koniec pracy wysyłać zmiany na git'a  
      * [x] 4. Prototyp aplikacji wysłany wcześniej obejmował taką samą funkcjonalność  
-     * [x] 5. Pliki head.php oraz nav.php są otwierane na każdej podstronie  
+     * [x] 5. Pliki [head.php](https://github.com/jacekoleksy/Travel-Compass/blob/bb55fd01991865738b0ba1ae7beb73a356d3fc6e/public/views/head.php#L1) oraz [nav.php](https://github.com/jacekoleksy/Travel-Compass/blob/bb55fd01991865738b0ba1ae7beb73a356d3fc6e/public/views/nav.php#L1) są otwierane na każdej podstronie  
      * [x] 6. Połączenie z bazą PostgreSQL
      * [x] 7. Baza danych zawiera relacje jeden do jednego oraz jeden do wielu [ERD](#erd "Goto General Diagram ERD")
      * [x] 8. Wersja PHP 7.4.3
