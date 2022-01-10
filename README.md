@@ -46,10 +46,10 @@ Specyfikacja projektu:
      * [x] 15. system sprawdza czy użytkownik ma ustawioną wartość `enabled` w bazie na `true`, tym samym sprawiając że ma dostęp do niektórych podstron
      * [x] 16. Jedyne role jakie użyłem to użytkownik zalogowany i niezalogowany - z dostępem do odpowiednich podstron z użyciem sesji
      * [x] 17. Wylogowanie
-     * [x] 18. Zastosowałem wywołanie widoków np. w pliku Questions.php
+     * [x] 18. Zastosowałem wywołanie widoków np. w pliku Questions.php, dodatkowo stosuję sekwencje w bazie danych
      * [x] 19. Stosuję m.in. inner join na tabeli results
      * [x] 20. Hasła są hashowane
-     * [x] 21. Powtarzalny kod jest zawarty w plikach head.php oraz nav.php
+     * [x] 21. Powtarzalny kod jest zawarty w plikach [head.php](https://github.com/jacekoleksy/Travel-Compass/blob/bb55fd01991865738b0ba1ae7beb73a356d3fc6e/public/views/head.php#L1) oraz [nav.php](https://github.com/jacekoleksy/Travel-Compass/blob/bb55fd01991865738b0ba1ae7beb73a356d3fc6e/public/views/nav.php#L1)
      * [x] 22. Czystość i przejrzystość kodu
 
 ## Diagram ERD:
