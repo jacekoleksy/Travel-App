@@ -65,6 +65,7 @@ Project is created with:
 To run this project, just download and extract all files
 
 ## Images
+* PC  
 ![image](https://user-images.githubusercontent.com/47715648/148698375-07919857-6c39-4136-bbf7-911dc472f772.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698561-3092ef5c-4454-4790-8b65-cb4cdcfa78a1.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698664-e58b0090-c431-4015-b5c8-8c49a1a5526f.png)
@@ -72,9 +73,14 @@ To run this project, just download and extract all files
 ![image](https://user-images.githubusercontent.com/47715648/148698913-d258110a-5025-4dac-ba2c-5fff5b0592ad.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698964-511520d0-0ad4-497c-8a84-b93114df220d.png)
 
+* Tablet  
 ![image](https://user-images.githubusercontent.com/47715648/148698878-81c081b5-b703-46e7-87ea-047bd262cb0c.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698926-acf6c25b-258c-4b97-b9c9-b2abc2014e9f.png)
+![image](https://user-images.githubusercontent.com/47715648/148736016-67517454-4600-496a-bda6-02b8d1d432fb.png)
+![image](https://user-images.githubusercontent.com/47715648/148736062-42d93a65-af46-4384-a549-408716687584.png)
+![image](https://user-images.githubusercontent.com/47715648/148736114-17c71fff-8e55-4f1f-9a4b-0726d1a9544d.png)
 
+* Smartphone  
 ![image](https://user-images.githubusercontent.com/47715648/148698585-4f6a3234-f39d-4570-9188-7b0a45d3cb0e.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698678-15fea78f-0d2f-4d87-b0d7-f06f66edae9c.png)
 ![image](https://user-images.githubusercontent.com/47715648/148698787-d9c37d60-da3a-4ad8-b07b-16789da334db.png)
