@@ -13,6 +13,7 @@ Ten projekt to odpowiednik kompasu politycznego, ale dotyczącego celu wakacyjne
 * aktywność w danym miejscu (od małej do dużej ilości możliwości)
 
 W przyszłości należałoby oczywiście powiększyć bazę pytań, oraz celów pordóży, a przede wszystkim sposób filtrowania: np. poprzez pytanie czy ktos chce jechać do Europy i odpowiedź "Nie zgadzam się" powinno filtrować już tylko wyniki spoza Europy. 
+Link do pełnych filmów na Youtube: https://www.youtube.com/channel/UCt1dSVcWG9deXcJAinaW48g/videos
 
 ## Description
 ![image](https://user-images.githubusercontent.com/47715648/148698375-07919857-6c39-4136-bbf7-911dc472f772.png)
